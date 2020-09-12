@@ -1,0 +1,82 @@
+<html>
+    <script>
+        condition=true
+        while(condition) {
+            var appleCondition=true
+            while (appleCondition) {
+                
+                var apple=parseInt(prompt('masukkan jumlah apel'))
+                var stockApple=5
+                if(apple>stockApple){
+                    alert('kesalahan dalam input, stock apel hanya ada '+stockApple)
+                    appleCondition=true
+                } else{
+                    break;
+                } 
+            }
+            do {
+                var grape=parseInt(prompt('masukkan jumlah anggur'))
+                var stockGrape=7
+                if(grape>stockGrape){
+                    alert('kesalahan dalam input, stock anggur hanya ada '+stockGrape)
+                    
+                }
+            } while (grape>stockGrape);
+
+            do {
+                var orange=parseInt(prompt('masukkan jumlah jeruk'))
+                var stockOrange=4
+                if(orange>stockOrange){
+                    alert('kesalahan dalam input, stock orange hanya ada '+stockOrange)
+                    
+                } else {
+                    
+                }
+            } while (orange>stockOrange);
+
+            var priceApple=4000
+            var priceGrape=5000
+            var priceOrange=8000
+            var totalPrice=apple*priceApple+grape*priceGrape+orange*priceOrange
+
+            alert(
+                'detail belanja\n\n'+
+                'apple '+apple+' X '+priceApple+' = '+apple*priceApple+'\n'+
+                'anggur '+grape+' X '+priceGrape+' = '+grape*priceGrape+'\n'+
+                'orange '+orange+' X '+priceOrange+' = '+orange*priceOrange+'\n'+
+                'total '+totalPrice 
+            )
+
+            
+            do {
+                var uang=parseInt(prompt('masukkan uang anda'))
+                var kondisiBayar
+                if(uang<totalPrice){
+                    alert('uang anda kurang')
+                    kondisiBayar=true
+                }else if(uang==totalPrice){
+                    alert('uang anda pas, terima kasih')
+                    kondisiBayar=false
+                } else if (!(uang>0)){//menolak jika user input string
+                    alert('benerin tulisan lu kampang')
+                    kondisiBayar=true
+                }
+                else{
+                    alert('ini kembalian anda '+(uang-totalPrice))
+                    kondisiBayar=false
+                    
+                }
+            } while (kondisiBayar);
+            
+            condition=confirm('mau belanja lagi?')
+
+            alert('terima kasih')
+        }
+       
+            
+            
+
+
+
+    </script>
+</html>

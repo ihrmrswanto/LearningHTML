@@ -1,0 +1,105 @@
+<html>
+    <script>
+        var namaBuah=['apple','anggur','jeruk']
+        var stockBuah=[5,7,4]
+        var hargaBuah=[4000, 5000, 8000]
+        var qtyBuah=[]
+        var cartBuah=[]
+
+        //Selamat datang
+
+        var selamatDatang
+        kondisiSelamat=true
+        while (kondisiSelamat) {
+            do {
+                selamatDatang=prompt('Selamat Datang! \n1.Masuk \n2.Keluar')
+                if(!(selamatDatang==1 || selamatDatang==2)){
+                    alert('Harap masukkan pilihan yang benar ya kampang')
+                    kondisiSelamat=true
+                } else if (selamatDatang==2){
+                    alert('Pergi jauh - jauh ya anda')
+                    kondisiSelamat=false
+                } else{
+                    kondisiSelamat=false
+                }
+
+            } while (kondisiSelamat);
+            
+        } 
+
+        //Masuk ke pilihan utama
+
+        var pilihanUtama
+        kondisiUtama=true
+        while (kondisiUtama) {
+            do {
+                pilihanUtama=prompt('Silahkan pilih \n1. Melihat daftar buah \n2. Menambah Daftar Buah \n3. Belanja')
+                if (!(pilihanUtama==1 || pilihanUtama==2 ||  pilihanUtama==3)){
+                    alert('Coba dibaca lagi ya pilihannya')
+                    kondisiUtama=true
+                
+                //Kalo user memilih pilihan nomor satu
+                }else if (pilihanUtama==1){
+                    var daftarBuah=''
+                    for(let i=0; i<namaBuah.length; i++)
+                    daftarBuah+=(`${i+1}. ${namaBuah[i]} | stok ${stockBuah[i]} | harga ${hargaBuah[i]}/kg\n\n`)
+                    alert(daftarBuah)
+                    kondisiUtama=true
+
+                //Kalo user memilih pilihan nomor dua
+                } else if(pilihanUtama==2){
+                    daftarBuah=''
+                    namaBuah.push(prompt('Silahkan masukan nama buah?'))
+                    //klo si user gk masukim angka 
+                    do{
+
+                        var stockBuah=0
+                        kondisiStock=true
+                        stockBuah.push(parseInt(prompt('Masukkan stok?')))
+                            if(!(stockBuah=0)){
+                                alert('harap masukkan angka ya kammpang')
+                                kondisiStock=true
+                            } else{
+                                alert('stock berhasil di masukkan')
+                                kondisiStock=false
+                            }
+
+
+                    } while(kondisiStock)
+
+                    
+                    hargaBuah.push(prompt('Berapa harganya untuk per kilo?'))
+                    for(i=0;i<namaBuah.length;i++)
+                    daftarBuah+=(`${i+1}. ${namaBuah[i]} | stok ${stockBuah[i]} | harga ${hargaBuah[i]}/kg\n\n`)
+                    alert(`ini list buah terbaru\n\n ${daftarBuah}`)
+                    menuUtama=true
+            
+                } else if (pilihanUtama==3){
+                    var inputanUser=0
+                    
+
+                }
+
+
+
+
+
+
+
+
+
+                
+            } while (condition);
+            
+        }
+        
+
+
+
+
+
+
+
+            
+    </script>
+</html>

@@ -1,0 +1,146 @@
+<html>
+<script>
+
+var namaBuah=['apple','anggur','jeruk']
+var stockBuah=[5,7,4]
+var hargaBuah=[4000, 5000, 8000]
+var qtyBuah=[]
+var cartBuah=[]
+
+
+var selamat
+var welcoming=true
+while(welcoming) {
+    do{
+        var selamat=prompt('selamat datang\n1.masuk\n2.exit')
+        if (!(selamat==1 || selamat==2)) {
+            alert('masukkan angka yang sesuai ya bangke')
+            welcoming=true
+            
+    
+    
+                menuUtama=true
+                while(menuUtama){
+                    menuUtama=prompt('what do you want to do? \n1.menampilkan daftar buah \n2.menambahkan buah \n3.membeli buah \n4.mengedit buah') 
+                    if(menuUtama==1){
+                        daftarBuah=''
+                        for(i=0;i<namaBuah.length;i++)
+                        daftarBuah+=(`${i+1}. ${namaBuah[i]} | stok ${stockBuah[i]} | harga ${hargaBuah[i]}/kg\n\n`)
+                        alert(daftarBuah)
+                        menuUtama=true
+                        
+                    } else if (menuUtama==2){
+                        daftarBuah=''
+                    
+                        namaBuah.push(prompt('silahkan masukan nama buah?'))
+
+                        stockBuah.push(parseInt(prompt('masukkan stok')))
+
+                        hargaBuah.push(prompt('berapa harganya?'))
+                        for(i=0;i<namaBuah.length;i++)
+                        daftarBuah+=(`${i+1}. ${namaBuah[i]} | stok ${stockBuah[i]} | harga ${hargaBuah[i]}/kg\n\n`)
+                        alert(`ini list buah terbaru\n\n ${daftarBuah}`)
+                        menuUtama=true
+                        
+                    
+                            
+                            
+                        
+                        
+                        
+
+
+                        
+
+                    } else if (menuUtama==3){
+                        var inputanUser=0
+                        for(i=0;i<namaBuah.length;i++){
+                            var kondisiBelanja = true
+                            do {
+                                inputanUser=parseInt(prompt(`masukkan jumlah ${namaBuah[i]}`))
+                                if(inputanUser>stockBuah[i]){
+                                    alert('stok buah kurang, harap input ulang')
+                                    kondisiBelanja = true
+                                }else if (inputanUser<=stockBuah[i]) {
+                                    alert(`berhasil memasukkan ${namaBuah[i]}`)
+                                    qtyBuah.push(inputanUser) //ngepush ke array
+                                    stockBuah[i] -= inputanUser
+                                    kondisiBelanja = false
+                                
+                                } else {
+
+                                }
+                            
+                            } while (kondisiBelanja);
+                        }   
+
+                        
+                    } else{
+                        
+                        }
+                        
+                    }
+                    
+                    
+                var totalPrice=0
+                var output=''
+                for(i=0;i<namaBuah.length;i++){
+                    output+=(`${namaBuah[i]}: ${qtyBuah[i]} x ${hargaBuah[i]} = ${qtyBuah[i]*hargaBuah[i]}\n\n`)  
+                    totalPrice+=(stockBuah[i]*hargaBuah[i])
+                    // console.log(hargaBuah[i])
+                }
+                alert(`${output} totalnya jadi ${totalPrice}`)
+
+                
+                
+                        
+                            
+                                
+
+                        
+
+                    
+                            
+            
+                
+                
+            
+                do {
+                    var uang=parseInt(prompt('masukkan uang anda'))
+                    var kondisiBayar
+                    if(uang<totalPrice){
+                        alert('uang anda kurang')
+                        kondisiBayar=true
+                    }else if(uang==totalPrice){
+                        alert('uang anda pas, terima kasih')
+                        kondisiBayar=false
+                    } else if (!(uang>0)){//menolak jika user input string
+                        alert('benerin tulisan lu kampang')
+                        kondisiBayar=true
+                    }
+                    else{
+                        alert('ini kembalian anda '+(uang-totalPrice))
+                        kondisiBayar=false
+                        
+                    }
+                } while (kondisiBayar);
+
+                    condition=confirm('mau belanja lagi?')
+
+                    alert('terima kasih')
+        }
+                
+    }while(welcoming)
+}
+            
+                
+        
+            
+
+    
+    
+
+
+
+</script>
+</html>

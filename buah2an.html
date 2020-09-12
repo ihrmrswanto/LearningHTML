@@ -1,0 +1,109 @@
+<html>
+    <script>
+        alert('welcome')
+        var menuUtama
+         kondisiMenuUtama=true 
+         namaBuah=['apple','grape','orange']
+         cartBuah=[]
+         cartHarga=[]
+         price=[1000, 15000, 20000]
+         stock=[5, 7, 8]
+         
+        while (conditionMenu) {
+            do {
+                menuUtama=prompt('menu utama\n1. belanja \n2.edit buah \n3.exit')
+                if (!(menuUtama>=1 && menuUtama <4)){
+                    alert('masukkan pilihan yang bnar')
+                }
+            } while (!(menuUtama>=1 && menuUtama<4));
+            
+            if (menuUtama==1){
+            }
+            //meminta user input qty
+                var appleCondition=true
+            while(appleCondition){
+                cartBuah[0]=parseInt(prompt('masukkan jumlah '))
+                //memeriksa apakah inputan user melebihi stok
+                if (cartBuah[0]>stock[0]){
+                    //masukkan info kepada user jika ada kesalahan 
+                    alert('kesalahan dalam input stock apel'+'='+stock)
+                } else if(!(cartBuah[0]>0)){
+                    alert('masukkan angka')
+                } else{
+                    break;
+                }
+            var grapeCondition=true
+                while (grapeCondition) {
+                    grape=parseInt(prompt('masukkan jumlah anggur'))
+                    if (grape > stockGrape){
+                        //infokan bahwa terjadi  kesalahan
+                        alert('kesalahan dalam input  stick anggur'+'='+stockGrape)
+                    } else {
+                        grapeCondition=false
+                    }
+                    while (grapeCondition);
+                } 
+                var orangeCondition=true;
+                //meminta input jumlah 
+                while (orangeCondition) {
+                    orange=parseInt(prompt('masukkan jumlah jeruk'))
+                    //memeriksa apakah inputan user melebihi stok
+                } if (orange > stockOrange){
+                    alert('kesalahan dalam input stock jeruk'+'='+stockOrange)
+                }
+                else {
+                    orangeCondition=false
+                }
+
+            }
+            //memeriksa paling tidak ada satu input yg mengalami kesalahan 
+            if( apple===0 | grape===0 | orange===0){
+                //info to user the transacction was cancelled due to input mistake
+                alert('transaksi dibatalkan, salah satu mengalami kesalahan input')
+            } else {
+                //total  biaya
+                var totalApple= apple*priceApple
+                var totalGrape= grape*priceGrape
+                var totalOrange=orange*priceOrange
+                //hitung total semuanya
+                var totalPrice=totalApple+totalGrape+totalOrange
+                //info kepada user detail uang yang harus di bayar
+                alert(
+                    'detail belanja\n\n'+
+                    'Apple:'+apple+'x'+priceApple+'='+totalApple+'\n'+
+                    'grape:'+grape+'x'+priceGrape+'='+totalGrape+'\n'+
+                    'orange'+orange+'x'+priceOrange+'='+totalOrange+'\n\n'+
+                    'total:'+totalPrice
+                )
+                
+            } 
+            
+            do{
+                //meminta input user u/ uang di bayarkan 
+                var money=prompt('masukkan jumlah uang')
+                //hitung kemungkinan selisih antara uang di user yg di bayr 
+                var margin=money-totalPrice
+                //jika uang yang di berikan kurang dri yg seharusnya 
+                if(money>totalPrice){
+                    alert('transaksi dibatalkan, uang yang anda masukkan kurang'+margin)
+                    //jika uang yg diberikan lebih 
+
+                }else if (money>totalPrice){
+                    alert(
+                        'terima kasih \n\n'+
+                        'uang kembali untuk  anda'+margin
+                    )
+                }else 
+                {
+                    alert('terima kasih')
+                }
+            } while (money<totalPrice) 
+                conditionMenu=confirm('again')
+            
+        }
+        
+        
+        
+          
+         </script>
+</html>

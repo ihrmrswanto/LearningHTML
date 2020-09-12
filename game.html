@@ -1,0 +1,56 @@
+<html>
+    <script>
+        let condition=true
+        while (condition) {
+            // menangkap pilihan player
+            let p=prompt('silahkan pilih: \ngajah, semut, manusia')
+            //menangkap pilihan computer
+            let comp= Math.random(); //harus ngerti juga nih masalah bilangan
+            if( comp < 0.34){
+                comp = 'gajah';
+            } else if ( comp >= 0.34 && comp < 0.67){
+                    comp = 'manusia';
+                } else {
+                    comp = 'semut';
+                }
+            
+            
+                
+            // menentukan rules
+            let hasil=""
+
+            if ( p == comp){
+                hasil = "SERI"
+            } else if ( p =='gajah'){
+                // if ( comp == 'manusia'){
+                //     hasil = "MENANG"
+                // }else{
+                //     hasil = "KALAH"
+                // }
+                hasil= ( comp == 'Manusia') ? 'MENANG' : 'KALAH' ;
+            } else if ( p == 'manusia'){
+                // if (comp == 'gajah'){
+                //     hasil = "KALAH"
+                // }else {
+                //     hasil = "MENANG"
+                // }
+                hasil = ( comp == 'Gajah') ? "KALAH" : "MENANG" ; //ini cara ringkas dan cepat dibanding di atas.
+            } else if ( p == 'semut'){
+                // if (comp == 'manusia'){
+                //     hasil = 'KALAH'
+                // }else{
+                //     hasil = "MENANG"
+                // }
+                hasil = ( comp == 'Manusia') ? "KALAH" : "MENANG" ;
+            } else{
+                hasil = 'anda memasukkan pilihan yang salah';
+            }     
+            // tampilkan hasilnya 
+            alert(`kamu memilih:`+ p + `\nkomputer memilih:`+comp+`\nmaka hasilnya:`+hasil);
+            
+            condition =confirm('mau main lagi?')
+        
+        }
+        alert('terima kasih sudah bermain')
+    </script>
+</html>
